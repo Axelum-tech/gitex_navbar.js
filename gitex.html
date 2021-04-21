@@ -1,0 +1,46 @@
+<script>
+let name=["John","Marry","Kate",]
+let clientsHighPriority=["Tob","Pete",]
+let clientLowPriority=["Vivky","Lessly",]//,prompt("Add low priority client")
+
+
+
+let order=name.length                 +
+        clientsHighPriority.length  +
+        clientLowPriority.length
+
+function showClients(){
+    clientsHighPriority.unshift(prompt( "Add hight priority client"))
+    if (clientsHighPriority.includes(null)){
+        name.unshift(clientsHighPriority[1])
+        name.unshift(clientsHighPriority[2])
+     }else{
+        for(n=0;n<3;n++){
+            name.unshift(clientsHighPriority[n])
+    }
+    order++
+    }
+
+clientLowPriority.push(prompt( "Add low priority client"))
+
+    if(clientLowPriority.includes(null)){
+        name.push(clientLowPriority[0])
+        name.push(clientLowPriority[1])
+    }else{
+        for(n=0;n<3;n++){
+            name.push(clientLowPriority[n])
+        }
+    order++
+    }
+        
+for (let i=0;i<order; i++){   
+console.log(i+1+"."+name[i])  
+}
+
+
+}
+
+showClients()
+    
+
+</script>
